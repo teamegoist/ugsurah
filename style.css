@@ -1,0 +1,192 @@
+:root {
+    --neon-pink: #ff007f;
+    --neon-blue: #00f0ff;
+    --dark-purple: #0d0221;
+    --cyber-purple: #241442;
+    --neon-green: #00ff66;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at center, var(--cyber-purple) 0%, var(--dark-purple) 100%);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--neon-blue);
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-shadow: 0 0 5px var(--neon-blue);
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--neon-blue);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: var(--neon-blue);
+    color: var(--dark-purple);
+    box-shadow: 0 0 20px var(--neon-blue);
+    transform: scale(1.05);
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+#lives-display {
+    color: #ff3333;
+    text-shadow: 0 0 10px #ff3333;
+    letter-spacing: 2px;
+}
+
+.stat span {
+    font-weight: bold;
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.game-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.word-card {
+    background: rgba(13, 2, 33, 0.9);
+    border: 3px solid var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.word-display {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 15px var(--neon-blue);
+    letter-spacing: 1px;
+}
+
+/* Зургуудын хүснэгт (2х2 хэмжээтэй) */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.img-option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 3px solid var(--neon-pink);
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-option:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px var(--neon-pink);
+    border-color: #fff;
+}
+
+.img-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(13, 2, 33, 0.98);
+    border: 3px solid var(--neon-pink);
+    box-shadow: 0 0 30px var(--neon-pink);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
+}
+
+.start-btn {
+    background: var(--neon-pink);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--neon-pink);
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.start-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--neon-pink);
+}
+
+.hidden {
+    display: none !important;
+}
