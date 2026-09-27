@@ -3,53 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-pop Demon Hunters: Зургийн Ангуучид</title>
+    <title>Huntrix: Румигийн Үгийн Ангуучид</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Хөдөлгөөнт анимейшн зориулсан сан -->
+    <link rel="stylesheet" href="https://cloudflare.com"/>
 </head>
 <body>
 
-    <h1>K-pop Demon Hunters</h1>
-    <div class="subtitle">⚔️ ҮГИЙГ УНШААД ЗӨВ ЗУРГИЙГ АНГУУД! ⚔️</div>
+    <h1 class="animate__animated animate__fadeInDown">HUNTR/X: RUMI STAGE</h1>
+    <div class="subtitle">🎤 ХАГАС ЧӨТГӨР РУМИГИЙН ХАМТ ҮГНҮҮДИЙГ АНГУУДАЦГААЯ! ⚔️</div>
 
-    <!-- Өдрийн Сонголт -->
+    <!-- Өдрийн сонголт -->
     <div class="tabs" id="tabs-container"></div>
 
-    <!-- Статистик (Амь, Оноо, Хугацаа) -->
-    <div class="dashboard">
-        <div class="stat">Ангуучны Амь: <span id="lives-display">❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</span></div>
+    <!-- Тоглоомын статус -->
+    <div class="dashboard animate__animated animate__fadeIn">
+        <div class="stat">Ангуучны HP: <span id="lives-display">❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</span></div>
         <div class="stat">Хугацаа: <span id="timer">60</span>с</div>
         <div class="stat">Оноо: <span id="score">0</span></div>
     </div>
 
-    <!-- Тоглоомын Төв Хэсэг -->
+    <!-- Тоглоомын төв талбар -->
     <div class="game-container">
-        <!-- Эхлэх болон Дуусах дэлгэц -->
+        <!-- Эхлэх / Дуусах дэлгэц -->
         <div class="overlay" id="start-overlay">
-            <h3 style="margin-bottom: 20px; color: var(--neon-blue); font-size: 1.8rem;">Ангуучин бэлэн үү?</h3>
-            <p style="color: #aaa; margin-bottom: 20px;">Үгийг уншаад зөв зургийг дар. Буруугаар дарвал 1 амь хасагдана!</p>
-            <button class="start-btn" onclick="startGame()">Ангууг Эхлүүлэх</button>
+            <h3 style="margin-bottom: 10px; color: var(--rumi-cyan); font-size: 1.8rem;">Румигийн тайзанд тавтай морил!</h3>
+            <p style="color: #ddd; margin-bottom: 25px; max-width: 85%; font-size: 1rem;">Үгийг уншаад зөв зургийг дар. Буруу дарвал 1 амь хасагдана!</p>
+            <button class="start-btn animate__animated animate__pulse animate__infinite" onclick="startGame()">Тоглоомыг Эхлүүлэх</button>
         </div>
         
         <div class="overlay hidden" id="end-overlay">
-            <h2 id="end-title" style="color: var(--neon-pink); font-size: 2.2rem;">Ангуу Дууслаа!</h2>
-            <p style="font-size: 1.4rem; margin: 15px 0;">Чиний оноо: <span id="final-score" style="color: var(--neon-blue); font-weight: bold;">0</span></p>
-            <button class="start-btn" onclick="resetGame()" style="background: var(--neon-blue); box-shadow: 0 0 20px var(--neon-blue);">Дахин тоглох</button>
+            <h2 id="end-title" style="font-size: 2.2rem;">Ангуу Дууслаа!</h2>
+            <p style="font-size: 1.4rem; margin: 15px 0;">Нийт оноо: <span id="final-score" style="color: var(--rumi-cyan); font-weight: bold;">0</span></p>
+            <button class="start-btn" onclick="resetGame()">Дахин тоглох</button>
         </div>
 
-        <!-- Унших ёстой үг -->
-        <div class="word-card">
+        <!-- Унших үг харуулах карт -->
+        <div class="word-card" id="word-card">
             <div class="word-display" id="word-box">Алим</div>
         </div>
 
-        <!-- Сонгох зургуудын талбар -->
-        <div class="options-grid" id="options-grid">
-            <!-- Зургууд энд кодоор үүсэж орно -->
-        </div>
+        <!-- 4 Сонгох зураг -->
+        <div class="options-grid" id="options-grid"></div>
     </div>
 
-    <!-- Скрипт холболт -->
     <script src="words.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
