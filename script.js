@@ -39,7 +39,6 @@ function updateDisplay() {
     if (dayWords.length === 0) return;
     const currentItem = dayWords[currentIndex];
     
-    // Румигийн урам зоригтой шилжилтийн анимейшн
     const wordBox = document.getElementById('word-card');
     wordBox.className = "word-card animate__animated animate__zoomIn";
     document.getElementById('word-box').innerText = currentItem.word;
@@ -77,7 +76,8 @@ function generateOptions(correctItem) {
         const div = document.createElement('div');
         div.className = "img-option animate__animated animate__backInUp";
         div.style.animationDelay = `${index * 0.08}s`;
-        div.innerHTML = `<img src="${item.img}" alt="img" onerror="this.src='https://placehold.co'">`;
+        // Зургийн таг биш шууд Эможи дүрсийг маш томоор (зураг шиг) харуулна
+        div.innerHTML = `<span style="font-size: 4.5rem;">${item.img}</span>`;
         div.onclick = () => checkAnswer(item.word, correctItem.word, div);
         grid.appendChild(div);
     });
@@ -106,7 +106,6 @@ function checkAnswer(selectedWord, correctWord, element) {
     if (!gameActive) return;
 
     if (selectedWord === correctWord) {
-        // Зөв хариулбал зураг эргэж гялалзах анимейшн
         element.style.borderColor = "var(--rumi-green)";
         element.className = "img-option animate__animated animate__flipInY";
         score += 10;
@@ -121,7 +120,6 @@ function checkAnswer(selectedWord, correctWord, element) {
             updateDisplay();
         }, 500);
     } else {
-        // Буруу хариулбал амь хасагдаж чичрэх эффект
         lives--;
         updateLivesDisplay();
         element.classList.add('wrong-flash');
@@ -135,7 +133,7 @@ function checkAnswer(selectedWord, correctWord, element) {
 function updateLivesDisplay() {
     let hearts = "";
     for (let i = 0; i < lives; i++) hearts += "❤️";
-    document.getElementById('lives-display').innerText = hearts || "Тайз Нарны Эгч Нарт Шилжлээ 👾";
+    document.getElementById('lives-display').innerText = hearts || "GAME OVER 👾";
 }
 
 function endGame(timeOut) {
@@ -148,7 +146,7 @@ function endGame(timeOut) {
         endTitle.innerText = "Хугацаа Дууслаа! ⏰";
         endTitle.style.color = "var(--rumi-cyan)";
     } else {
-        endTitle.innerText = "Румигийн Амь Дууслаа! 🎤";
+        endTitle.innerText = "Руми Ялагдлаа! 🎤";
         endTitle.style.color = "var(--rumi-magenta)";
     }
     
