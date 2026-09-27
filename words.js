@@ -1,4 +1,3 @@
-// Зургуудыг Unsplash-ийн бэлэн сангийн холбоосоор оруулав
 const wordData = {
     1: [
         { word: "Аав", img: "https://unsplash.com" },
