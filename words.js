@@ -1,52 +1,52 @@
 const wordData = {
     1: [
-        { word: "Аав", img: "https://unsplash.com" },
-        { word: "Ээж", img: "https://unsplash.com" },
-        { word: "Ах", img: "https://unsplash.com" },
-        { word: "Эгч", img: "https://unsplash.com" },
-        { word: "Эмээ", img: "https://unsplash.com" },
-        { word: "Өвөө", img: "https://unsplash.com" },
-        { word: "Алим", img: "https://unsplash.com" },
-        { word: "Сүү", img: "https://unsplash.com" }
+        { word: "Аав", img: "https://wikimedia.org" },
+        { word: "Ээж", img: "https://wikimedia.org" },
+        { word: "Ах", img: "https://wikimedia.org" },
+        { word: "Эгч", img: "https://wikimedia.org" },
+        { word: "Эмээ", img: "https://wikimedia.org" },
+        { word: "Өвөө", img: "https://wikimedia.org" },
+        { word: "Алим", img: "https://wikimedia.org" },
+        { word: "Сүү", img: "https://wikimedia.org" }
     ],
     2: [
-        { word: "Мах", img: "https://unsplash.com" },
-        { word: "Талх", img: "https://unsplash.com" },
-        { word: "Муур", img: "https://unsplash.com" },
-        { word: "Шувуу", img: "https://unsplash.com" },
-        { word: "Нохой", img: "https://unsplash.com" },
-        { word: "Гахай", img: "https://unsplash.com" },
-        { word: "Үхэр", img: "https://unsplash.com" },
-        { word: "Хонь", img: "https://unsplash.com" }
+        { word: "Мах", img: "https://wikimedia.org" },
+        { word: "Талх", img: "https://wikimedia.org" },
+        { word: "Муур", img: "https://wikimedia.org" },
+        { word: "Шувуу", img: "https://wikimedia.org" },
+        { word: "Нохой", img: "https://wikimedia.org" },
+        { word: "Гахай", img: "https://wikimedia.org" },
+        { word: "Үхэр", img: "https://wikimedia.org" },
+        { word: "Хонь", img: "https://wikimedia.org" }
     ],
     3: [
-        { word: "Ямаа", img: "https://unsplash.com" },
-        { word: "Адуут", img: "https://unsplash.com" },
-        { word: "Тэмээ", img: "https://unsplash.com" },
-        { word: "Туулай", img: "https://unsplash.com" },
-        { word: "Загас", img: "https://unsplash.com" },
-        { word: "Нар", img: "https://unsplash.com" },
-        { word: "Сар", img: "https://unsplash.com" },
-        { word: "Салхи", img: "https://unsplash.com" }
+        { word: "Ямаа", img: "https://wikimedia.org" },
+        { word: "Адуу", img: "https://wikimedia.org" },
+        { word: "Тэмээ", img: "https://wikimedia.org" },
+        { word: "Туулай", img: "https://wikimedia.org" },
+        { word: "Загас", img: "https://wikimedia.org" },
+        { word: "Нар", img: "https://wikimedia.org" },
+        { word: "Сар", img: "https://wikimedia.org" },
+        { word: "Салхи", img: "https://wikimedia.org" }
     ],
     4: [
-        { word: "Бороо", img: "https://unsplash.com" },
-        { word: "Цас", img: "https://unsplash.com" },
-        { word: "Чулуу", img: "https://unsplash.com" },
-        { word: "Мод", img: "https://unsplash.com" },
-        { word: "Навч", img: "https://unsplash.com" },
-        { word: "Ус", img: "https://unsplash.com" },
-        { word: "Уул", img: "https://unsplash.com" },
-        { word: "Нуур", img: "https://unsplash.com" }
+        { word: "Бороо", img: "https://wikimedia.org" },
+        { word: "Цас", img: "https://wikimedia.org" },
+        { word: "Чулуу", img: "https://wikimedia.org" },
+        { word: "Мод", img: "https://wikimedia.org" },
+        { word: "Навч", img: "https://wikimedia.org" },
+        { word: "Ус", img: "https://wikimedia.org" },
+        { word: "Уул", img: "https://wikimedia.org" },
+        { word: "Нуур", img: "https://wikimedia.org" }
     ],
     5: [
-        { word: "Өвөл", img: "https://unsplash.com" },
-        { word: "Хавар", img: "https://unsplash.com" },
-        { word: "Намар", img: "https://unsplash.com" },
-        { word: "Зун", img: "https://unsplash.com" },
-        { word: "Уув", img: "https://unsplash.com" },
-        { word: "Идэв", img: "https://unsplash.com" },
-        { word: "Өгөв", img: "https://unsplash.com" },
-        { word: "Инээв", img: "https://unsplash.com" }
+        { word: "Өвөл", img: "https://wikimedia.org" },
+        { word: "Хавар", img: "https://wikimedia.org" },
+        { word: "Намар", img: "https://wikimedia.org" },
+        { word: "Зун", img: "https://wikimedia.org" },
+        { word: "Уув", img: "https://wikimedia.org" },
+        { word: "Идэв", img: "https://wikimedia.org" },
+        { word: "Өгөв", img: "https://wikimedia.org" },
+        { word: "Инээв", img: "https://wikimedia.org" }
     ]
 };
