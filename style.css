@@ -1,14 +1,15 @@
 :root {
-    --neon-pink: #ff007f;
-    --neon-blue: #00f0ff;
-    --dark-purple: #0d0221;
-    --cyber-purple: #241442;
-    --neon-green: #00ff66;
+    --rumi-purple: #4c1d95; /* Румигийн үндсэн гүн ягаан өнгө */
+    --rumi-dark: #1e1b4b;   /* Нүдэнд маш зөөлөн, ядраахгүй хар ягаан */
+    --rumi-magenta: #e879f9;/* Зөөлөн магента туяа */
+    --rumi-cyan: #38bdf8;   /* Тод цэнхэр гэрэл */
+    --rumi-green: #34d399;  /* Зөв хариултын ногоон өнгө */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: radial-gradient(circle at center, var(--cyber-purple) 0%, var(--dark-purple) 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Нүдэнд тааламжтай дулаан уусгалттай дэвсгэр */
+    background: radial-gradient(circle at center, #2e1065 0%, var(--rumi-dark) 100%);
     color: #fff;
     margin: 0;
     padding: 20px;
@@ -20,105 +21,98 @@ body {
 }
 
 h1 {
-    color: #fff;
-    text-transform: uppercase;
     font-size: 2.5rem;
     margin-bottom: 5px;
-    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(232, 121, 249, 0.4);
     letter-spacing: 2px;
-    text-align: center;
 }
 
 .subtitle {
-    color: var(--neon-blue);
+    color: var(--rumi-cyan);
     font-weight: bold;
     margin-bottom: 25px;
-    text-shadow: 0 0 5px var(--neon-blue);
     text-align: center;
+    font-size: 0.95rem;
 }
 
 .tabs {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 25px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .tab-btn {
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--neon-blue);
-    color: #fff;
-    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid var(--rumi-purple);
+    color: #e2e8f0;
+    padding: 10px 22px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 30px;
-    transition: all 0.3s;
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
 .tab-btn.active, .tab-btn:hover {
-    background: var(--neon-blue);
-    color: var(--dark-purple);
-    box-shadow: 0 0 20px var(--neon-blue);
-    transform: scale(1.05);
+    background: var(--rumi-magenta);
+    border-color: #fff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 121, 249, 0.3);
 }
 
 .dashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 25px;
-    font-size: 1.2rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 8px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     width: 90%;
-    max-width: 600px;
+    max-width: 550px;
 }
 
 #lives-display {
-    color: #ff3333;
-    text-shadow: 0 0 10px #ff3333;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
 }
 
 .stat span {
     font-weight: bold;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink);
+    color: var(--rumi-magenta);
 }
 
 .game-container {
     position: relative;
     width: 90%;
-    max-width: 600px;
+    max-width: 550px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .word-card {
-    background: rgba(13, 2, 33, 0.9);
-    border: 3px solid var(--neon-blue);
-    box-shadow: 0 0 20px var(--neon-blue);
+    background: var(--rumi-purple);
     border-radius: 20px;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .word-display {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 3.8rem;
+    font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 15px var(--neon-blue);
     letter-spacing: 1px;
 }
 
-/* Зургуудын хүснэгт (2х2 хэмжээтэй) */
 .options-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -127,23 +121,22 @@ h1 {
 }
 
 .img-option {
-    background: rgba(255, 255, 255, 0.05);
-    border: 3px solid var(--neon-pink);
-    border-radius: 15px;
+    background: #2e1065;
+    border: 3px solid var(--rumi-purple);
+    border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 4 / 3;
     cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .img-option:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px var(--neon-pink);
-    border-color: #fff;
+    transform: scale(1.05) rotate(1deg);
+    border-color: var(--rumi-cyan);
 }
 
 .img-option img {
@@ -152,12 +145,16 @@ h1 {
     object-fit: cover;
 }
 
+/* Буруу сонголт хийх үед улаан болж чичрэх эффект */
+.img-option.wrong-flash {
+    animation: shakeX 0.4s ease-in-out;
+    border-color: #f43f5e !important;
+}
+
 .overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(13, 2, 33, 0.98);
-    border: 3px solid var(--neon-pink);
-    box-shadow: 0 0 30px var(--neon-pink);
+    background: rgba(30, 27, 75, 0.97);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -166,25 +163,24 @@ h1 {
     z-index: 10;
     padding: 20px;
     text-align: center;
+    border: 2px solid var(--rumi-magenta);
 }
 
 .start-btn {
-    background: var(--neon-pink);
+    background: var(--rumi-magenta);
     color: white;
     border: none;
-    padding: 15px 40px;
-    font-size: 1.4rem;
+    padding: 14px 35px;
+    font-size: 1.3rem;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
-    box-shadow: 0 0 20px var(--neon-pink);
-    text-transform: uppercase;
     transition: 0.2s;
+    box-shadow: 0 4px 15px rgba(232, 121, 249, 0.4);
 }
 
 .start-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px var(--neon-pink);
+    transform: scale(1.08);
 }
 
 .hidden {
