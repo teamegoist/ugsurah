@@ -30,7 +30,7 @@ function selectDay(day, element) {
 
 function setupDay() {
     dayWords = [...wordData[currentDay]];
-    dayWords.sort(() => Math.random() - 0.5); // Үгсийг холих
+    dayWords.sort(() => Math.random() - 0.5);
     currentIndex = 0;
     updateDisplay();
 }
@@ -38,19 +38,26 @@ function setupDay() {
 function updateDisplay() {
     if (dayWords.length === 0) return;
     const currentItem = dayWords[currentIndex];
+    
+    // Румигийн урам зоригтой шилжилтийн анимейшн
+    const wordBox = document.getElementById('word-card');
+    wordBox.className = "word-card animate__animated animate__zoomIn";
     document.getElementById('word-box').innerText = currentItem.word;
+    
     generateOptions(currentItem);
+    
+    setTimeout(() => {
+        wordBox.className = "word-card";
+    }, 600);
 }
 
-// 4 Сонголт үүсгэх (1 зөв, 3 буруу)
 function generateOptions(correctItem) {
     const grid = document.getElementById('options-grid');
     grid.innerHTML = "";
 
     let choices = [correctItem];
-    
-    // Бусад бүх өдрүүдийн үгсийг нэгтгэж буруу сонголт хийх санг бэлдэх
     let allOtherItems = [];
+    
     for (let day in wordData) {
         wordData[day].forEach(item => {
             if (item.word !== correctItem.word) {
@@ -59,21 +66,19 @@ function generateOptions(correctItem) {
         });
     }
     
-    // Санамсаргүй 3 буруу сонголт нэмэх
     allOtherItems.sort(() => Math.random() - 0.5);
     for (let i = 0; i < 3; i++) {
         if (allOtherItems[i]) choices.push(allOtherItems[i]);
     }
 
-    // 4 сонголтоо дахин холих
     choices.sort(() => Math.random() - 0.5);
 
-    // Дэлгэцэнд зураг хэлбэрээр гаргах
-    choices.forEach(item => {
+    choices.forEach((item, index) => {
         const div = document.createElement('div');
-        div.className = "img-option";
-        div.innerHTML = `<img src="${item.img}" alt="сонголт">`;
-        div.onclick = () => checkAnswer(item.word, correctItem.word);
+        div.className = "img-option animate__animated animate__backInUp";
+        div.style.animationDelay = `${index * 0.08}s`;
+        div.innerHTML = `<img src="${item.img}" alt="img" onerror="this.src='https://placehold.co'">`;
+        div.onclick = () => checkAnswer(item.word, correctItem.word, div);
         grid.appendChild(div);
     });
 }
@@ -93,42 +98,44 @@ function startGame() {
     timerInterval = setInterval(() => {
         timeLeft--;
         document.getElementById('timer').innerText = timeLeft;
-        if (timeLeft <= 0) {
-            endGame(true); // Хугацаа дууссан
-        }
+        if (timeLeft <= 0) endGame(true);
     }, 1000);
 }
 
-function checkAnswer(selectedWord, correctWord) {
+function checkAnswer(selectedWord, correctWord, element) {
     if (!gameActive) return;
 
     if (selectedWord === correctWord) {
+        // Зөв хариулбал зураг эргэж гялалзах анимейшн
+        element.style.borderColor = "var(--rumi-green)";
+        element.className = "img-option animate__animated animate__flipInY";
         score += 10;
         document.getElementById('score').innerText = score;
         
-        // Дараагийн үг рүү шилжих
-        currentIndex++;
-        if (currentIndex >= dayWords.length) {
-            currentIndex = 0;
-            dayWords.sort(() => Math.random() - 0.5);
-        }
-        updateDisplay();
+        setTimeout(() => {
+            currentIndex++;
+            if (currentIndex >= dayWords.length) {
+                currentIndex = 0;
+                dayWords.sort(() => Math.random() - 0.5);
+            }
+            updateDisplay();
+        }, 500);
     } else {
-        // Буруу хариулбал амь хасагдана
+        // Буруу хариулбал амь хасагдаж чичрэх эффект
         lives--;
         updateLivesDisplay();
-        if (lives <= 0) {
-            endGame(false); // Амь дууссан
-        }
+        element.classList.add('wrong-flash');
+        setTimeout(() => {
+            element.classList.remove('wrong-flash');
+        }, 400);
+        if (lives <= 0) endGame(false);
     }
 }
 
 function updateLivesDisplay() {
     let hearts = "";
-    for (let i = 0; i < lives; i++) {
-        hearts += "❤️";
-    }
-    document.getElementById('lives-display').innerText = hearts || "ҮХЭШГҮЙ ДҮҮ СӨНӨЛӨӨ";
+    for (let i = 0; i < lives; i++) hearts += "❤️";
+    document.getElementById('lives-display').innerText = hearts || "Тайз Нарны Эгч Нарт Шилжлээ 👾";
 }
 
 function endGame(timeOut) {
@@ -139,10 +146,10 @@ function endGame(timeOut) {
     const endTitle = document.getElementById('end-title');
     if (timeOut) {
         endTitle.innerText = "Хугацаа Дууслаа! ⏰";
-        endTitle.style.color = "var(--neon-blue)";
+        endTitle.style.color = "var(--rumi-cyan)";
     } else {
-        endTitle.innerText = "Амь Дууслаа! 💀";
-        endTitle.style.color = "var(--neon-pink)";
+        endTitle.innerText = "Румигийн Амь Дууслаа! 🎤";
+        endTitle.style.color = "var(--rumi-magenta)";
     }
     
     document.getElementById('end-overlay').classList.remove('hidden');
